@@ -18,9 +18,17 @@ package pizzashop;
  */
 public class PizzaCutter 
 {
-    public int numSlices = 0;// how many pieces to cut the pizza into
-    public PizzaCutter()
-    {
-        //intentionally left blank
+    private static PizzaCutter instance;
+    public int numSlices = 0; // how many pieces to cut the pizza into
+
+    private PizzaCutter() {
+        // Intentionally left blank
+    }
+
+    public static PizzaCutter getInstance() {
+        if (instance == null) {
+            instance = new PizzaCutter();
+        }
+        return instance;
     }
 }
